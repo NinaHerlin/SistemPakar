@@ -1,0 +1,52 @@
+{
+  "penyakit": {
+    "P01": "Bukan Osteoporosis",
+    "P02": "Osteoporosis Primer",
+    "P03": "Osteoporosis Sekunder",
+    "P04": "Osteoporosis Idiopatik"
+  },
+  "gejala": {
+    "G01": "Usia lebih dari 40 tahun",
+    "G02": "Kelebihan berat badan",
+    "G03": "Memiliki riwayat patah tulang",
+    "G04": "Memiliki riwayat penyakit anggota keluarga yang mengidap osteoporosis",
+    "G05": "Mengalami menopause",
+    "G06": "Merasakan sakit punggung berkepanjangan",
+    "G07": "Sering merokok",
+    "G08": "Nyeri pada sendi",
+    "G09": "Kekurangan hormon testosteron",
+    "G10": "Sering konsumsi minuman keras",
+    "G11": "Keretakan pada tulang punggung",
+    "G12": "Konsumsi obat-obatan golongan steroid seperti Glukokortikoid",
+    "G13": "Mengidap penyakit hipertiroidisme"
+  },
+  "rules": [
+    {
+      "if": ["G01", "G02", "G03", "G05", "G08", "G11", "G13"],
+      "then": "P01"
+    },
+    {
+      "if": ["G01", "G02", "G03", "G07", "G08", "G10", "G12", "G13"],
+      "then": "P02"
+    },
+    {
+      "if": ["G04", "G05", "G06", "G08", "G09", "G11"],
+      "then": "P03"
+    }
+  ],
+  "mb_md": {
+    "G01": [0.7, 0.2],
+    "G02": [0.6, 0.3],
+    "G03": [0.6, 0.1],
+    "G04": [1.0, 0.1],
+    "G05": [0.6, 0.3],
+    "G06": [0.7, 0.2],
+    "G07": [0.8, 0.1],
+    "G08": [0.6, 0.2],
+    "G09": [0.7, 0.2],
+    "G10": [0.8, 0.1],
+    "G11": [0.6, 0.2],
+    "G12": [0.7, 0.1],
+    "G13": [0.6, 0.2]
+  }
+}
