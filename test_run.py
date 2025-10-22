@@ -1,7 +1,7 @@
 from inference_engine.engine import infer
 from inference_engine.data_loader import load_rules
 
-# daftar gejala (G01–G13)
+# daftar gejala (G01–G23)
 gejala_list = {
     "G01": "Usia lebih dari 40 tahun",
     "G02": "Kelebihan berat badan",
@@ -15,7 +15,17 @@ gejala_list = {
     "G10": "Sering konsumsi minuman keras",
     "G11": "Keretakan pada tulang punggung",
     "G12": "Konsumsi obat-obatan golongan steroid seperti Glukokortikoid",
-    "G13": "Mengidap penyakit hipertiroidisme"
+    "G13": "Mengidap penyakit hipertiroidisme",
+    "G14": "Rendahnya asupan kalsium harian",
+    "G15": "Kurangnya aktivitas fisik",
+    "G16": "Kekurangan vitamin D",
+    "G17": "Riwayat penggunaan kortikosteroid jangka panjang",
+    "G18": "Mengidap penyakit autoimun",
+    "G19": "Tinggi badan menurun seiring bertambahnya usia",
+    "G20": "Fraktur tulang tanpa trauma berat",
+    "G21": "Penggunaan obat antikonvulsan",
+    "G22": "Gangguan makan seperti anorexia",
+    "G23": "Hiperparatiroidisme"
 }
 
 print("=== SISTEM PAKAR DIAGNOSA OSTEOPOROSIS ===")

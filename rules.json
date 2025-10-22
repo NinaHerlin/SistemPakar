@@ -18,11 +18,25 @@
     "G10": "Sering konsumsi minuman keras",
     "G11": "Keretakan pada tulang punggung",
     "G12": "Konsumsi obat-obatan golongan steroid seperti Glukokortikoid",
-    "G13": "Mengidap penyakit hipertiroidisme"
+    "G13": "Mengidap penyakit hipertiroidisme",
+    "G14": "Rendahnya asupan kalsium harian",
+    "G15": "Kurangnya aktivitas fisik",
+    "G16": "Kekurangan vitamin D",
+    "G17": "Riwayat penggunaan kortikosteroid jangka panjang",
+    "G18": "Mengidap penyakit autoimun",
+    "G19": "Tinggi badan menurun seiring bertambahnya usia",
+    "G20": "Fraktur tulang tanpa trauma berat",
+    "G21": "Penggunaan obat antikonvulsan",
+    "G22": "Gangguan makan seperti anorexia",
+    "G23": "Hiperparatiroidisme"
   },
   "rules": [
     {
-      "if": ["G01", "G02", "G03", "G05", "G08", "G11", "G13"],
+      "if": ["G01", "G02"],
+      "then": "G14"
+    },
+    {
+      "if": ["G14", "G03", "G05"],
       "then": "P01"
     },
     {
@@ -32,6 +46,38 @@
     {
       "if": ["G04", "G05", "G06", "G08", "G09", "G11"],
       "then": "P03"
+    },
+    {
+      "if": ["G01", "G05", "G09", "G11", "G13", "G15", "G16"],
+      "then": "P04"
+    },
+    {
+      "if": ["G07", "G10"],
+      "then": "G15"
+    },
+    {
+      "if": ["G15", "G12", "G17"],
+      "then": "P02"
+    },
+    {
+      "if": ["G16", "G18"],
+      "then": "G19"
+    },
+    {
+      "if": ["G19", "G20"],
+      "then": "P03"
+    },
+    {
+      "if": ["G21", "G22", "G23"],
+      "then": "P04"
+    },
+    {
+      "if": ["G03", "G11"],
+      "then": "G20"
+    },
+    {
+      "if": ["G20", "G08"],
+      "then": "P02"
     }
   ],
   "mb_md": {
@@ -47,6 +93,16 @@
     "G10": [0.8, 0.1],
     "G11": [0.6, 0.2],
     "G12": [0.7, 0.1],
-    "G13": [0.6, 0.2]
+    "G13": [0.6, 0.2],
+    "G14": [0.8, 0.1],
+    "G15": [0.7, 0.2],
+    "G16": [0.6, 0.3],
+    "G17": [0.7, 0.1],
+    "G18": [0.6, 0.2],
+    "G19": [0.8, 0.1],
+    "G20": [0.7, 0.2],
+    "G21": [0.6, 0.3],
+    "G22": [0.7, 0.1],
+    "G23": [0.6, 0.2]
   }
 }
