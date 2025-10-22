@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Diagnosa Osteoporosis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-user-md header-icon"></i>
+                <h1>Sistem Pakar Diagnosa Osteoporosis</h1>
+                <p>Sistem bantuan diagnosis untuk mendeteksi risiko osteoporosis</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('consultation')">
+                <i class="fas fa-stethoscope"></i> Konsultasi
+            </button>
+            <button class="tab-button" onclick="showTab('information')">
+                <i class="fas fa-info-circle"></i> Informasi
+            </button>
+            <button class="tab-button" onclick="showTab('about')">
+                <i class="fas fa-question-circle"></i> Tentang
+            </button>
+        </nav>
+
+        <!-- Consultation Tab -->
+        <div id="consultation" class="tab-content active">
+            <div class="consultation-container">
+                <div class="consultation-layout">
+                    <!-- Left Column: Input Section -->
+                    <div class="input-column">
+                        <!-- Symptoms Section -->
+                        <div class="input-section">
+                            <div class="section-header">
+                                <i class="fas fa-thermometer-half"></i>
+                                <h2>Gejala dan Faktor Risiko</h2>
+                                <p>Pilih gejala dan faktor risiko yang sesuai dengan kondisi Anda:</p>
+                            </div>
+                            <div id="symptoms-container" class="checkbox-grid">
+                                <!-- Symptoms will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button id="diagnose-btn" class="btn btn-primary" onclick="performDiagnosis()">
+                                <i class="fas fa-search"></i> Lakukan Diagnosis
+                            </button>
+                            <button id="reset-btn" class="btn btn-secondary" onclick="resetForm()">
+                                <i class="fas fa-undo"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results Section -->
+                    <div class="results-column">
+                        <!-- Loading Indicator -->
+                        <div id="loading" class="loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Sedang melakukan diagnosis...</p>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div id="results" class="results-section" style="display: none;">
+                            <div class="section-header">
+                                <i class="fas fa-clipboard-list"></i>
+                                <h2>Hasil Diagnosis</h2>
+                            </div>
+                            <div id="results-content">
+                                <!-- Results will be displayed here -->
+                            </div>
+                        </div>
+
+                        <!-- Placeholder when no results -->
+                        <div id="results-placeholder" class="results-placeholder">
+                            <div class="placeholder-content">
+                                <i class="fas fa-clipboard-check"></i>
+                                <h3>Hasil Diagnosis</h3>
+                                <p>Pilih gejala dan faktor risiko pada kolom kiri, kemudian klik "Lakukan Diagnosis" untuk melihat hasil analisis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Tab -->
+        <div id="information" class="tab-content">
+            <div class="info-container">
+                <div class="section-header">
+                    <i class="fas fa-book-medical"></i>
+                    <h2>Informasi Osteoporosis</h2>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-bone"></i>
+                        <h3>Apa itu Osteoporosis?</h3>
+                        <p>Osteoporosis adalah kondisi di mana tulang menjadi lemah dan rapuh, sehingga mudah patah. Kondisi ini terjadi ketika tubuh kehilangan terlalu banyak tulang, membuat terlalu sedikit tulang, atau keduanya.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Gejala Umum</h3>
+                        <ul>
+                            <li>Nyeri punggung yang persisten</li>
+                            <li>Postur tubuh yang semakin membungkuk</li>
+                            <li>Penurunan tinggi badan</li>
+                            <li>Tulang mudah patah</li>
+                            <li>Nyeri pada sendi</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Pencegahan</h3>
+                        <ul>
+                            <li>Konsumsi makanan kaya kalsium</li>
+                            <li>Mendapat cukup vitamin D</li>
+                            <li>Olahraga teratur, terutama weight bearing</li>
+                            <li>Hindari merokok dan alkohol berlebihan</li>
+                            <li>Pemeriksaan kesehatan rutin</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-user-group"></i>
+                        <h3>Kelompok Berisiko</h3>
+                        <ul>
+                            <li>Wanita menopause</li>
+                            <li>Usia di atas 50 tahun</li>
+                            <li>Riwayat keluarga osteoporosis</li>
+                            <li>Kurang aktivitas fisik</li>
+                            <li>Pengguna steroid jangka panjang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Tab -->
+        <div id="about" class="tab-content">
+            <div class="about-container">
+                <div class="section-header">
+                    <i class="fas fa-info"></i>
+                    <h2>Tentang Sistem</h2>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-section">
+                        <h3><i class="fas fa-bullseye"></i> Tujuan Sistem</h3>
+                        <p>Sistem Pakar Diagnosa Osteoporosis ini dikembangkan untuk membantu mendeteksi risiko osteoporosis berdasarkan gejala dan faktor risiko yang dialami pengguna. Sistem ini menggunakan teknologi forward chaining untuk memberikan diagnosis yang akurat.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3><i class="fas fa-cogs"></i> Cara Kerja</h3>
+                        <p>Sistem ini bekerja dengan menganalisis gejala dan faktor risiko yang Anda pilih, kemudian membandingkannya dengan basis pengetahuan yang telah diprogram. Hasil diagnosis akan menunjukkan kemungkinan kondisi yang Anda alami beserta tingkat kepercayaannya.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Penting untuk Diketahui</h3>
+                        <div class="warning-box">
+                            <p><strong>Perhatian:</strong> Sistem ini hanya untuk bantuan skrining awal dan tidak menggantikan diagnosis medis profesional. Selalu konsultasikan dengan dokter untuk diagnosis dan penanganan yang tepat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3><i class="fas fa-code"></i> Teknologi</h3>
+                        <p>Sistem ini dibangun menggunakan:</p>
+                        <ul>
+                            <li>Backend: Python dengan Flask</li>
+                            <li>Frontend: HTML, CSS, JavaScript</li>
+                            <li>Database: JSON</li>
+                            <li>Algoritma: Forward Chaining</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Sistem Pakar Osteoporosis. Dikembangkan untuk tujuan edukasi.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
