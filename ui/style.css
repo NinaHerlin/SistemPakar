@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #F9FAFB;
     min-height: 100vh;
     font-size: 16px;
 }
@@ -23,7 +23,7 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, #00cc88 0%, #0088ff 100%);
+    background: linear-gradient(135deg, #4A90E2, #6FC3DF);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -36,7 +36,7 @@ body {
 .header-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #66ffcc;
+    color: #ffffff;
 }
 
 .header h1 {
@@ -80,8 +80,8 @@ body {
 
 .tab-button.active {
     background: white;
-    color: #007bff;
-    border-bottom: 3px solid #007bff;
+    color: #2D9CDB;
+    border-bottom: 3px solid #2D9CDB;
 }
 
 .tab-button i {
@@ -106,7 +106,7 @@ body {
 
 .section-header i {
     font-size: 2rem;
-    color: #007bff;
+    color: #2D9CDB;
     margin-bottom: 0.5rem;
 }
 
@@ -172,13 +172,13 @@ body {
 }
 
 .checkbox-item:hover {
-    border-color: #007bff;
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+    border-color: #2D9CDB;
+    box-shadow: 0 2px 8px rgba(45, 156, 219, 0.1);
 }
 
 .checkbox-item.selected {
-    border-color: #007bff;
-    background: #e7f3ff;
+    border-color: #2D9CDB;
+    background: #E8F4FD;
 }
 
 .checkbox-item input[type="checkbox"] {
@@ -199,7 +199,7 @@ body {
 }
 
 .checkbox-item.selected .checkmark {
-    background-color: #007bff;
+    background-color: #2D9CDB;
 }
 
 .checkbox-item .checkmark:after {
@@ -252,14 +252,14 @@ body {
 }
 
 .btn-primary {
-    background: #007bff;
+    background: #2D9CDB;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #0056b3;
+    background: #1E7BB6;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(45, 156, 219, 0.3);
 }
 
 .btn-secondary {
@@ -284,7 +284,7 @@ body {
 .loading {
     text-align: center;
     padding: 2rem;
-    color: #007bff;
+    color: #2D9CDB;
 }
 
 .loading i {
@@ -310,7 +310,7 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1rem;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #2D9CDB;
 }
 
 .diagnosis-header {
@@ -327,7 +327,7 @@ body {
 }
 
 .confidence-badge {
-    background: #007bff;
+    background: #2D9CDB;
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -369,16 +369,16 @@ body {
 }
 
 .recommendations li {
-    background: #e7f3ff;
+    background: #E8F4FD;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
     border-radius: 5px;
-    border-left: 3px solid #007bff;
+    border-left: 3px solid #2D9CDB;
 }
 
 .recommendations li:before {
     content: "✓ ";
-    color: #007bff;
+    color: #2D9CDB;
     font-weight: bold;
 }
 
@@ -404,7 +404,7 @@ body {
 
 .info-card i {
     font-size: 2.5rem;
-    color: #007bff;
+    color: #2D9CDB;
     margin-bottom: 1rem;
 }
 
@@ -448,7 +448,7 @@ body {
 }
 
 .about-section h3 i {
-    color: #007bff;
+    color: #2D9CDB;
 }
 
 .about-section p {
@@ -496,44 +496,44 @@ body {
         margin: 0;
         border-radius: 0;
     }
-    
+
     .header-content {
         padding: 0 1rem;
     }
-    
+
     .header h1 {
         font-size: 2.2rem;
     }
-    
+
     .header p {
         font-size: 1.2rem;
     }
-    
+
     .tab-content {
         padding: 1rem;
     }
-    
+
     .input-section {
         padding: 1rem;
     }
-    
+
     .checkbox-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .nav-tabs {
         flex-direction: column;
     }
-    
+
     .tab-button {
         padding: 1rem 1rem;
         font-size: 1rem;
     }
-    
+
     .btn {
         display: block;
         width: 100%;
@@ -547,6 +547,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -638,29 +639,29 @@ body {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .results-column {
         position: static;
         order: 2;
     }
-    
+
     .input-column {
         order: 1;
     }
-    
+
     .results-placeholder {
         min-height: 200px;
         padding: 2rem 1rem;
     }
-    
+
     .placeholder-content i {
         font-size: 3rem;
     }
-    
+
     .placeholder-content h3 {
         font-size: 1.5rem;
     }
-    
+
     .tab-content {
         padding: 1rem;
     }
@@ -676,10 +677,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #007bff;
+    background: #2D9CDB;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0056b3;
+    background: #1E7BB6;
 }
