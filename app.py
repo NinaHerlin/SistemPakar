@@ -4,6 +4,8 @@ import os
 from inference_engine.engine import infer
 from inference_engine.data_loader import load_rules
 
+#nyobainn ini harus masuk ke branch baru dn pull request
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
